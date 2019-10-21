@@ -23,7 +23,7 @@ namespace ESLPro
         {
             InitializeComponent();
 
-            WindowTitle.Text = Properties.Settings.Default.currentTournament; // Valeur globale
+            WindowTitle.Text = "Tournoi: " + Properties.Settings.Default.currentTournament; // Valeur globale
 
             
         }
