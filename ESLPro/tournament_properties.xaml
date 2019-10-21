@@ -1,0 +1,28 @@
+﻿<Window x:Class="ESLPro.tournament_properties"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ESLPro"
+        mc:Ignorable="d"
+        Title="tournament_properties" Height="450" Width="800" ResizeMode="NoResize">
+    <Grid>
+        <TextBlock FontSize="25" Margin="0,0,0,381">Propriétés du tournoi</TextBlock>
+        <TextBlock Margin="31,121,620,274">Choisissez un BO:</TextBlock>
+        <ComboBox Name="BO" Margin="31,147,620,245">
+            <ComboBoxItem IsSelected="True">BO3</ComboBoxItem>
+            <ComboBoxItem>BO5</ComboBoxItem>
+        </ComboBox>
+
+        <ComboBox Name="numTeam"  Margin="31,227,620,165">
+            <ComboBoxItem IsSelected="True">4</ComboBoxItem>
+            <ComboBoxItem>8</ComboBoxItem>
+            <ComboBoxItem>16</ComboBoxItem>
+            <ComboBoxItem>32</ComboBoxItem>
+        </ComboBox>
+        <TextBlock Margin="31,201,620,194">Nombre d'équipes</TextBlock>
+        <TextBlock Margin="31,45,620,350">Nom du tournoi</TextBlock>
+        <TextBox Name="Nom" Margin="31,71,620,321"></TextBox>
+        <Button Click="create_Click" Margin="250,341,250,35">Créer tournoi</Button>
+    </Grid>
+</Window>

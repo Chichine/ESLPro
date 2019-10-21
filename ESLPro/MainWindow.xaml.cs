@@ -24,5 +24,17 @@ namespace ESLPro
         {
             InitializeComponent();
         }
+
+        private void Nouveau_Click(object sender, RoutedEventArgs e)
+        {
+            //this.Navigate(new Uri("HomePage.xaml", UriKind.Relative))
+
+            tournament_properties page = new tournament_properties();
+
+            page.Show();
+            this.Close();
+
+           
+        }
     }
 }

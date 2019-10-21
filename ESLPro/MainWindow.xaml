@@ -5,8 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ESLPro"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Menu" Height="450" Width="800" ResizeMode="NoResize">
     <Grid>
-        
+        <Image Margin="250,10,250,310" Source="Logo.png" Stretch="Fill"/>
+        <Button Click="Nouveau_Click" Margin="250,140,250,199">Nouveau tournoi</Button>
+        <Button Margin="250,237,250,102">Charger tournoi</Button>
+
+        <Frame Name="Main"></Frame>
     </Grid>
 </Window>
