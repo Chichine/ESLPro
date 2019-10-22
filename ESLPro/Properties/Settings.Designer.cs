@@ -47,5 +47,17 @@ namespace ESLPro.Properties {
                 this["currentTournament"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string currentPDF {
+            get {
+                return ((string)(this["currentPDF"]));
+            }
+            set {
+                this["currentPDF"] = value;
+            }
+        }
     }
 }

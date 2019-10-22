@@ -51,6 +51,8 @@ namespace ESLPro
 
             DataScript Script = new DataScript();
 
+            
+
             Script.DataNew(Nom.Text, BO.Text, Convert.ToInt32(numTeam.Text));
             //Script.DataGet();
 

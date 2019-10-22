@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:ESLPro"
         mc:Ignorable="d"
         Title="Equipes" Height="450" Width="800">
-    <Grid>
+    <Grid Margin="0,0,0,378">
         <TextBlock Name="WindowTitle"></TextBlock>
+        <Button Click="test_Click" Margin="0,98,627,-128">Test</Button>
     </Grid>
 </Window>

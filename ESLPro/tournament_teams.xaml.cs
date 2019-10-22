@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Spire.Pdf;
 
 namespace ESLPro
 {
@@ -26,6 +27,21 @@ namespace ESLPro
             WindowTitle.Text = "Tournoi: " + Properties.Settings.Default.currentTournament; // Valeur globale
 
             
+        }
+
+        public void test_Click(object sender, RoutedEventArgs e)
+        {
+            PDF pdfmodule = new PDF();
+
+            DataScript test = new DataScript();
+
+            PdfDocument doc = pdfmodule.CreateDoc();
+            PdfPageBase page1 = pdfmodule.CreatePage(doc);
+
+            pdfmodule.newTitle(page1, "Tournoi: " + Properties.Settings.Default.currentTournament, 0, 0);
+
+            pdfmodule.SaveAndOpen(doc);
+
         }
     }
 }

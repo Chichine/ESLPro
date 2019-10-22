@@ -36,5 +36,12 @@ namespace ESLPro
 
            
         }
+
+        private void Charger_Click(object sender, RoutedEventArgs e)
+        {
+            load_tournament page = new load_tournament();
+            page.Show();
+            this.Close();
+        }
     }
 }
