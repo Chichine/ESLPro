@@ -8,6 +8,13 @@
         Title="Equipes" Height="450" Width="800">
     <Grid Margin="0,0,0,378">
         <TextBlock Name="WindowTitle"></TextBlock>
+        <TextBlock Name="teamMax" Margin="0,41,0,-41"></TextBlock>
         <Button Click="test_Click" Margin="0,98,627,-128">Test</Button>
+
+        <ListBox Name="AllTeams" Margin="14,184,468,-297" RenderTransformOrigin="0.5,0.5">
+            
+        </ListBox>
+        <TextBox Name="teamBox" Margin="343,184,285,-184"></TextBox>
+        <Button Name="teamAdd" Click="TeamAdd_Click" Margin="523,184,52,-184">Enregitrer equipe</Button>
     </Grid>
 </Window>

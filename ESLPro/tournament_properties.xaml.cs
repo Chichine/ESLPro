@@ -53,10 +53,11 @@ namespace ESLPro
 
             
 
-            Script.DataNew(Nom.Text, BO.Text, Convert.ToInt32(numTeam.Text));
+            int Id = Script.DataNew(Nom.Text, BO.Text, Convert.ToInt32(numTeam.Text));
             //Script.DataGet();
 
             Properties.Settings.Default.currentTournament = Nom.Text;
+            Properties.Settings.Default.currentTournamentId = Id;
 
             tournament_teams page = new tournament_teams();
 

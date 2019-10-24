@@ -25,16 +25,38 @@ namespace ESLPro
 
             DataScript Script = new DataScript();
 
-            List<string> AllTourneys = Script.getAllTournaments();
+            Dictionary<int, string> AllTourneys = Script.getAllTournaments();
 
-            foreach(string tourn in AllTourneys)
+            foreach(var tourn in AllTourneys)
             {
                 ListBoxItem newBox = new ListBoxItem();
 
-                newBox.Content = tourn;
+                newBox.Content = tourn.Value;
+                newBox.Name = "Id_" + tourn.Key.ToString();
+
+                newBox.AddHandler(ListBoxItem.MouseDownEvent, new MouseButtonEventHandler(Load_Tourney), true);
 
                 TournoisList.Items.Add(newBox);
             }
+        }
+
+        public void Load_Tourney(object sender, RoutedEventArgs e) // Load Tourney
+        {
+            ListBoxItem tsender = (ListBoxItem)sender;
+
+            int Id = Convert.ToInt32(tsender.Name.Substring(3));
+            //Console.WriteLine(Id);
+
+            DataScript Script = new DataScript();
+            List<string> Tourney = Script.GetTournament(Id);
+
+            //Console.WriteLine(Tourney[1]);
+
+            Properties.Settings.Default.currentTournament = Tourney[1];
+            Properties.Settings.Default.currentTournamentId = Convert.ToInt32(Tourney[0]);
+            tournament_teams page = new tournament_teams();
+            page.Show();
+            this.Close();
         }
 
         public void retour_Click(object sender, RoutedEventArgs e)
@@ -44,5 +66,7 @@ namespace ESLPro
             page.Show();
             this.Close();
         }
+
+
     }
 }
