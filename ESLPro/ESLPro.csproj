@@ -87,6 +87,9 @@
     <Compile Include="Modules\PDF.xaml.cs">
       <DependentUpon>PDF.xaml</DependentUpon>
     </Compile>
+    <Compile Include="teams_settings.xaml.cs">
+      <DependentUpon>teams_settings.xaml</DependentUpon>
+    </Compile>
     <Compile Include="tournament_properties.xaml.cs">
       <DependentUpon>tournament_properties.xaml</DependentUpon>
     </Compile>
@@ -114,6 +117,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Modules\PDF.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="teams_settings.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

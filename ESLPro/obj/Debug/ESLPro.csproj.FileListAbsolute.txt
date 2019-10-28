@@ -32,3 +32,5 @@ C:\Users\Chichine\Desktop\ESLPro\ESLPro\ESLPro\bin\Debug\Spire.Pdf.xml
 C:\Users\Chichine\Desktop\ESLPro\ESLPro\ESLPro\obj\Debug\ESLPro.csproj.CopyComplete
 C:\Users\Chichine\Desktop\ESLPro\ESLPro\ESLPro\obj\Debug\load_tournament.g.cs
 C:\Users\Chichine\Desktop\ESLPro\ESLPro\ESLPro\obj\Debug\load_tournament.baml
+C:\Users\Chichine\Desktop\ESLPro\ESLPro\ESLPro\obj\Debug\teams_settings.g.cs
+C:\Users\Chichine\Desktop\ESLPro\ESLPro\ESLPro\obj\Debug\teams_settings.baml

@@ -26,14 +26,14 @@ namespace ESLPro
             public static int currentId = Properties.Settings.Default.currentTournamentId;
             public static int NombreEquipeMax = 0;
         }
-        
+
         public void UpdateNombreEquipe()
         {
             DataScript Script = new DataScript();
             int nombreEquipes = Script.GetNombreEquipesDansTournoi(Globals.currentId);
             teamMax.Text = "Equipes: " + nombreEquipes + "/" + Globals.NombreEquipeMax;
         }
-        
+
         public tournament_teams()
         {
             InitializeComponent();
@@ -49,11 +49,13 @@ namespace ESLPro
 
             Console.WriteLine(Teams.Count());
 
-            foreach(var team in Teams)
+            foreach (var team in Teams)
             {
                 ListBoxItem newBox = new ListBoxItem();
                 newBox.Content = team.Value;
                 newBox.Name = "Id_" + team.Key;
+
+                newBox.AddHandler(ListBoxItem.MouseDownEvent, new MouseButtonEventHandler(Load_Team), true);
 
                 AllTeams.Items.Add(newBox);
             }
@@ -71,7 +73,7 @@ namespace ESLPro
             PdfPageBase page1 = pdfmodule.CreatePage(doc);
 
             pdfmodule.newTitle(page1, "Tournoi: " + Properties.Settings.Default.currentTournament, 100, 0);
-         
+
             pdfmodule.SaveAndOpen(doc);
         }
 
@@ -80,9 +82,9 @@ namespace ESLPro
             string Nom = teamBox.Text;
 
             DataScript Script = new DataScript();
-            
 
-            if(Nom != "")
+
+            if (Nom != "")
             {
                 int nombreEquipe = Script.getNombreEquipeAvecNom(Nom, Globals.currentId);
                 if (nombreEquipe == 0)
@@ -95,6 +97,8 @@ namespace ESLPro
                         ListBoxItem newBox = new ListBoxItem();
                         newBox.Content = Nom;
                         newBox.Name = "Id_" + Id;
+
+                        newBox.AddHandler(ListBoxItem.MouseDownEvent, new MouseButtonEventHandler(Load_Team), true);
 
                         AllTeams.Items.Add(newBox);
                         UpdateNombreEquipe();
@@ -113,6 +117,20 @@ namespace ESLPro
             {
                 MessageBox.Show("Erreur: Vous n'avez pas entré de nom d'équipe");
             }
+
+
+        }
+        public void Load_Team(object sender, RoutedEventArgs e) // Load Tourney
+        {
+            ListBoxItem tsender = (ListBoxItem)sender;
+
+            int TeamId = Convert.ToInt32(tsender.Name.Substring(3));
+
+            Properties.Settings.Default.currentTeamId = TeamId;
+
+            teams_settings page = new teams_settings();
+            page.Show();
+            this.Close();
         }
     }
 }

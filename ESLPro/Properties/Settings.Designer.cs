@@ -71,5 +71,17 @@ namespace ESLPro.Properties {
                 this["currentTournamentId"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int currentTeamId {
+            get {
+                return ((int)(this["currentTeamId"]));
+            }
+            set {
+                this["currentTeamId"] = value;
+            }
+        }
     }
 }

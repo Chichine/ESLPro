@@ -30,6 +30,31 @@ namespace ESLPro
             public static string cn_String = Properties.Settings.Default.connection_String;
         }
 
+        public List<string> GetTeam(int id)
+        {
+            List<string> tourney = new List<string>();
+
+            SqlConnection cn = new SqlConnection(Globals.cn_String);
+
+            string queryString = "SELECT * FROM equipes WHERE Id=" + id.ToString();
+
+            SqlCommand command = new SqlCommand(queryString, cn);
+            cn.Open();
+
+            SqlDataReader reader = command.ExecuteReader();
+
+
+            while (reader.Read())
+            {
+                for (int i = 0; i < 2; i++)
+                {
+                    tourney.Add(reader[i].ToString());
+                }
+            }
+
+            return tourney;
+        }
+
         public List<string> GetTournament(int Id)
         {
             List<string> tourney = new List<string>();
@@ -205,6 +230,28 @@ namespace ESLPro
             }
 
             return nombreEquipes;
+        }
+
+        public int newJoueur(int IdTeam, string Nom, string Prenom, string Pseudo)
+        {
+            SqlConnection cn = new SqlConnection(Globals.cn_String);
+
+
+            string queryString = "INSERT INTO joueurs (Nom, Prenom, Pseudo, IdEquipe) VALUES('" + Nom + "'" + ", '" + Prenom + "'" + ",'" + Pseudo+ "'," + IdTeam + ")";
+            string queryString2 = "SELECT MAX(Id) FROM joueurs";
+
+            SqlCommand command = new SqlCommand(queryString, cn);
+            cn.Open();
+
+            command.ExecuteNonQuery();
+
+            SqlCommand command2 = new SqlCommand(queryString2, cn);
+            SqlDataReader reader = command2.ExecuteReader();
+
+            reader.Read();
+            int lastId = Convert.ToInt32(reader[0]);
+
+            return lastId;
         }
     }
 }
