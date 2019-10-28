@@ -12,7 +12,7 @@ namespace ESLPro.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.2.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.3.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -26,7 +26,7 @@ namespace ESLPro.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Chichine\\Desktop\\ESL" +
-            "Pro\\ESLPro\\ESLPro\\Database1.mdf;Integrated Security=True")]
+            "Pro\\ESLPro\\Database1.mdf;Integrated Security=True")]
         public string connection_String {
             get {
                 return ((string)(this["connection_String"]));
@@ -81,6 +81,18 @@ namespace ESLPro.Properties {
             }
             set {
                 this["currentTeamId"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int currentPlayerId {
+            get {
+                return ((int)(this["currentPlayerId"]));
+            }
+            set {
+                this["currentPlayerId"] = value;
             }
         }
     }

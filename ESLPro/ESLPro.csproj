@@ -78,6 +78,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="joueur_settings.xaml.cs">
+      <DependentUpon>joueur_settings.xaml</DependentUpon>
+    </Compile>
     <Compile Include="load_tournament.xaml.cs">
       <DependentUpon>load_tournament.xaml</DependentUpon>
     </Compile>
@@ -96,6 +99,10 @@
     <Compile Include="tournament_teams.xaml.cs">
       <DependentUpon>tournament_teams.xaml</DependentUpon>
     </Compile>
+    <Page Include="joueur_settings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="load_tournament.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

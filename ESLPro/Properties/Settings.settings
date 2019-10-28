@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="connection_String" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Chichine\Desktop\ESLPro\ESLPro\ESLPro\Database1.mdf;Integrated Security=True</Value>
+      <Value Profile="(Default)">Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Chichine\Desktop\ESLPro\ESLPro\Database1.mdf;Integrated Security=True</Value>
     </Setting>
     <Setting Name="currentTournament" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
@@ -15,6 +15,9 @@
       <Value Profile="(Default)">0</Value>
     </Setting>
     <Setting Name="currentTeamId" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="currentPlayerId" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
   </Settings>

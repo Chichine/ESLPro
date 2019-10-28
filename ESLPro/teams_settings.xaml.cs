@@ -25,6 +25,12 @@ namespace ESLPro
             public static string TeamName = "";
         }
 
+        public void UpdateNombre() {
+            DataScript Script = new DataScript();
+            int nombreJoueur = Script.GetNombreJoueursDansEquipe(Globals.TeamId);
+            NombreJoueur.Text = "Joueurs: " + nombreJoueur.ToString() + "/5";
+        }
+
         public teams_settings()
         {
             InitializeComponent();
@@ -33,6 +39,24 @@ namespace ESLPro
 
             List<string> team = Script.GetTeam(Globals.TeamId);
             NomTournoi.Text = "Equipe: " + team[1];
+
+            Dictionary<int, string> joueurs = Script.GetJoueurs(Globals.TeamId);
+
+            foreach(var joueur in joueurs)
+            {
+                int Id = joueur.Key;
+                string TPseudo = joueur.Value;
+
+                ListBoxItem newBox = new ListBoxItem();
+                newBox.Content = TPseudo;
+                newBox.Name = "Id_" + Id;
+
+                newBox.AddHandler(ListBoxItem.MouseDownEvent, new MouseButtonEventHandler(Load_Joueur), true);
+
+                JoueursList.Items.Add(newBox);
+            }
+
+            UpdateNombre();
         }
 
         private void Ajout_Joueur(object sender, RoutedEventArgs e)
@@ -42,13 +66,45 @@ namespace ESLPro
             string TPrenom = Prenom.Text;
 
             DataScript Script = new DataScript();
-            int Id = Script.newJoueur(Globals.TeamId, TNom, TPrenom, TPseudo);
 
-            ListBoxItem newBox = new ListBoxItem();
-            newBox.Content = TPseudo;
-            newBox.Name = "Id_" + Id;
+            int nombreJoueurs = Script.getNombreJoueursAvecPseudo(TPseudo, Globals.TeamId);
+            if(nombreJoueurs == 0)
+            {
+                int nombreJoueur = Script.GetNombreJoueursDansEquipe(Globals.TeamId);
+                if (nombreJoueur < 5)
+                {
+                    int Id = Script.newJoueur(Globals.TeamId, TNom, TPrenom, TPseudo);
 
-            JoueursList.Items.Add(newBox);
+                    ListBoxItem newBox = new ListBoxItem();
+                    newBox.Content = TPseudo;
+                    newBox.Name = "Id_" + Id;
+
+                    newBox.AddHandler(ListBoxItem.MouseDownEvent, new MouseButtonEventHandler(Load_Joueur), true);
+
+                    JoueursList.Items.Add(newBox);
+                    UpdateNombre();
+                } else
+                {
+                    MessageBox.Show("Il y a déjà 5 joueurs dans cette équipe!");
+                }
+            } 
+            else
+            {
+                MessageBox.Show("Ce joueur est déjà dans cette équipe");
+            }
+        }
+
+        public void Load_Joueur(object sender, RoutedEventArgs e) // Load Tourney
+        {
+            ListBoxItem tsender = (ListBoxItem)sender;
+
+            int JoueurId = Convert.ToInt32(tsender.Name.Substring(3));
+
+            Properties.Settings.Default.currentPlayerId = JoueurId;
+
+            joueur_settings page = new joueur_settings();
+            page.Show();
+            this.Close();
         }
     }
 }

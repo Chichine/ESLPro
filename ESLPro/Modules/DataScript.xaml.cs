@@ -253,5 +253,95 @@ namespace ESLPro
 
             return lastId;
         }
+
+        public Dictionary<int, string> GetJoueurs(int IdTeam)
+        {
+            Dictionary<int, string> Joueurs = new Dictionary<int, string>();
+
+            SqlConnection cn = new SqlConnection(Globals.cn_String);
+
+            string QueryString = "SELECT * FROM joueurs WHERE IdEquipe=" + IdTeam;
+            Console.WriteLine(QueryString);
+
+            SqlCommand command = new SqlCommand(QueryString, cn);
+
+            cn.Open();
+
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                Joueurs.Add(Convert.ToInt32(reader[0]), reader[3].ToString());
+            }
+
+            return Joueurs;
+        }
+
+        public int getNombreJoueursAvecPseudo(string nom, int id)
+        {
+            int nombreJoueur = 0;
+
+            SqlConnection cn = new SqlConnection(Globals.cn_String);
+
+            string queryString = "SELECT * FROM joueurs WHERE IdEquipe=" + id + " AND CONVERT(VARCHAR, Pseudo) ='" + nom + "'";
+
+            SqlCommand command = new SqlCommand(queryString, cn);
+            cn.Open();
+
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                nombreJoueur = nombreJoueur + 1;
+            }
+
+            return nombreJoueur;
+        }
+
+        public int GetNombreJoueursDansEquipe(int IdEquipe)
+        {
+            int nombreJoueurs = 0;
+
+            SqlConnection cn = new SqlConnection(Globals.cn_String);
+
+            string queryString = "SELECT * FROM joueurs WHERE IdEquipe=" + IdEquipe;
+
+            SqlCommand command = new SqlCommand(queryString, cn);
+            cn.Open();
+
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                nombreJoueurs = nombreJoueurs + 1;
+            }
+
+            return nombreJoueurs;
+        }
+
+        public List<string> GetJoueur(int Id)
+        {
+            List<string> tourney = new List<string>();
+
+            SqlConnection cn = new SqlConnection(Globals.cn_String);
+
+            string queryString = "SELECT * FROM joueurs WHERE Id=" + Id.ToString();
+
+            SqlCommand command = new SqlCommand(queryString, cn);
+            cn.Open();
+
+            SqlDataReader reader = command.ExecuteReader();
+
+
+            while (reader.Read())
+            {
+                for (int i = 0; i < 7; i++)
+                {
+                    tourney.Add(reader[i].ToString());
+                }
+            }
+
+            return tourney;
+        }
     }
 }

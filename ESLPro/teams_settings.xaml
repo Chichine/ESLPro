@@ -8,15 +8,14 @@
         Title="teams_settings" Height="450" Width="800">
     <Grid>
         <TextBlock Name="NomTournoi" Margin="0,0,198,389">Test</TextBlock>
-        <TextBlock Margin="47,100,470,293">Joueurs: 0/5</TextBlock>
-        <TextBlock Margin="529,86,81,308">Pseudo</TextBlock>
-        <TextBox Name="Pseudo" Margin="529,111,81,273"></TextBox>
-        <Button Click="Ajout_Joueur" Margin="529,296,81,88">Ajouter joueur</Button>
-
+        <TextBlock Name="NombreJoueur" Margin="47,100,470,293">Joueurs: 0/5</TextBlock>
         <ListBox Margin="47,177,430,86" Name="JoueursList"></ListBox>
-        <TextBox Name="Nom" Margin="529,181,81,203"/>
-        <TextBox Name="Prenom" Margin="529,246,81,138"/>
+        <TextBlock Margin="529,86,81,308">Pseudo</TextBlock>
         <TextBlock Margin="529,156,81,238"><Run Text="Nom"/></TextBlock>
         <TextBlock Margin="529,221,81,173"><Run Text="Prénom"/></TextBlock>
+        <TextBox Name="Pseudo" Margin="529,111,81,273"></TextBox>
+        <TextBox Name="Nom" Margin="529,181,81,203"/>
+        <TextBox Name="Prenom" Margin="529,246,81,138"/>
+        <Button Click="Ajout_Joueur" Margin="529,296,81,88">Ajouter joueur</Button>
     </Grid>
 </Window>
