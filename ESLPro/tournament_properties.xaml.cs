@@ -41,8 +41,6 @@ namespace ESLPro
             command.ExecuteNonQuery();
         }
 
-        
-
         private void create_Click(object sender, RoutedEventArgs e)
         {
             //DataNew();

@@ -22,17 +22,28 @@ namespace ESLPro
         public static class Globals
         {
             public static int JoueurId = Properties.Settings.Default.currentPlayerId;
-
         }
         public joueur_settings()
         {
             InitializeComponent();
-
+            Globals.JoueurId = Properties.Settings.Default.currentPlayerId;
             DataScript Script = new DataScript();
 
             List<string> Joueur = Script.GetJoueur(Globals.JoueurId);
 
             NomJoueur.Text = "Joueur: " + Joueur[3];
+
+
+        }
+
+        private void Delete_Click(object sender, RoutedEventArgs e)
+        {
+            DataScript Script = new DataScript();
+            Script.DeleteJoueur(Globals.JoueurId);
+
+            teams_settings page = new teams_settings();
+            page.Show();
+            this.Close();
         }
     }
 }

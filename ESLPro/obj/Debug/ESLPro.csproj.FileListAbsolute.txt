@@ -71,3 +71,5 @@ C:\Users\Chichine\Desktop\ESLPro\ESLPro\obj\Debug\ESLPro.exe
 C:\Users\Chichine\Desktop\ESLPro\ESLPro\obj\Debug\ESLPro.pdb
 C:\Users\Chichine\Desktop\ESLPro\ESLPro\obj\Debug\joueur_settings.g.cs
 C:\Users\Chichine\Desktop\ESLPro\ESLPro\obj\Debug\joueur_settings.baml
+C:\Users\Chichine\Desktop\ESLPro\ESLPro\ESLPro\obj\Debug\joueur_settings.g.cs
+C:\Users\Chichine\Desktop\ESLPro\ESLPro\ESLPro\obj\Debug\joueur_settings.baml

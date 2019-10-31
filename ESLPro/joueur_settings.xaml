@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="joueur_settings" Height="450" Width="800">
     <Grid>
-        <TextBlock Name="NomJoueur">Joueur:</TextBlock>
+        <TextBlock Name="NomJoueur" Margin="0,0,287,393">Joueur:</TextBlock>
+        <Button Name="Delete" Click="Delete_Click" Margin="621,363,10,10">Supprimer joueur</Button>
     </Grid>
 </Window>

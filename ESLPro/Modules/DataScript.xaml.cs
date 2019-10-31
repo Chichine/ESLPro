@@ -321,6 +321,7 @@ namespace ESLPro
 
         public List<string> GetJoueur(int Id)
         {
+            Console.WriteLine("Show " + Id);
             List<string> tourney = new List<string>();
 
             SqlConnection cn = new SqlConnection(Globals.cn_String);
@@ -342,6 +343,18 @@ namespace ESLPro
             }
 
             return tourney;
+        }
+
+        public void DeleteJoueur(int Id)
+        {
+            Console.WriteLine("Delete " + Id);
+            SqlConnection cn = new SqlConnection(Globals.cn_String);
+            string queryString = "DELETE FROM joueurs WHERE Id=" + Id.ToString();
+
+            SqlCommand command = new SqlCommand(queryString, cn);
+            cn.Open();
+
+            command.ExecuteNonQuery();
         }
     }
 }
