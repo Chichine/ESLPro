@@ -45,5 +45,12 @@ namespace ESLPro
             page.Show();
             this.Close();
         }
+
+        private void Back_Click(object sender, RoutedEventArgs e)
+        {
+            teams_settings page = new teams_settings();
+            page.Show();
+            this.Close();
+        }
     }
 }

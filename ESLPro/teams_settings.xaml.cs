@@ -106,5 +106,12 @@ namespace ESLPro
             page.Show();
             this.Close();
         }
+
+        private void Back_Click(object sender, RoutedEventArgs e)
+        {
+            tournament_teams page = new tournament_teams();
+            page.Show();
+            this.Close();
+        }
     }
 }

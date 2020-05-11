@@ -16,5 +16,6 @@
         </ListBox>
         <TextBox Name="teamBox" Margin="343,184,285,-184"></TextBox>
         <Button Name="teamAdd" Click="TeamAdd_Click" Margin="523,184,52,-184">Enregistrer equipe</Button>
+        <Button Click="Menu_Click" Margin="14,364,647,-364">Menu</Button>
     </Grid>
 </Window>

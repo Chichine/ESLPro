@@ -9,5 +9,6 @@
     <Grid>
         <TextBlock Name="NomJoueur" Margin="0,0,287,393">Joueur:</TextBlock>
         <Button Name="Delete" Click="Delete_Click" Margin="621,363,10,10">Supprimer joueur</Button>
+        <Button Click="Back_Click" Margin="10,359,617,10">Retour</Button>
     </Grid>
 </Window>

@@ -17,5 +17,6 @@
         <TextBox Name="Nom" Margin="529,181,81,203"/>
         <TextBox Name="Prenom" Margin="529,246,81,138"/>
         <Button Click="Ajout_Joueur" Margin="529,296,81,88">Ajouter joueur</Button>
+        <Button Click="Back_Click" Margin="10,359,598,10">Retour</Button>
     </Grid>
 </Window>

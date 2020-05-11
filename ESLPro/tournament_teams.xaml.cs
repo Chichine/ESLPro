@@ -37,6 +37,7 @@ namespace ESLPro
         public tournament_teams()
         {
             InitializeComponent();
+            Globals.currentId = Properties.Settings.Default.currentTournamentId;
 
             WindowTitle.Text = "Tournoi: " + Properties.Settings.Default.currentTournament; // Valeur globale
             Console.WriteLine(Globals.currentId);
@@ -129,6 +130,16 @@ namespace ESLPro
             Properties.Settings.Default.currentTeamId = TeamId;
 
             teams_settings page = new teams_settings();
+            page.Show();
+            this.Close();
+        }
+
+        private void Menu_Click(object sender, RoutedEventArgs e)
+        {
+            AllTeams.Items.Clear();
+
+            MainWindow page = new MainWindow();
+
             page.Show();
             this.Close();
         }
